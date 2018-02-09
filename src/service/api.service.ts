@@ -13,7 +13,7 @@ export class APIService{
       categories:string;
       constructor(http:Http){
       this.http = http;
-      this.dataSourceUrl = "http://192.168.1.8:8000/api";
+      this.dataSourceUrl = "http://192.168.1.11:8000/api";
     }
 
     getLivres(){
@@ -33,6 +33,12 @@ export class APIService{
     putLivre(livre){
        // console.log(livre)
       return this.http.put(this.dataSourceUrl + "/livres/" + livre.id, livre).map(res => res.json());
+    }
+    showLivre(id:number){
+      return this.http.get(this.dataSourceUrl + "/livres/" + id).map(res => res.json());
+    }
+    deleteLivre(id){
+      return this.http.delete(this.dataSourceUrl + "/livres/" + id).map(res => res.json());
     }
 
 }

@@ -4,6 +4,7 @@ import {APIService} from "../../service/api.service";
 import {AddLivrePage} from "../add-livre/add-livre";
 import {Livre} from "../../models/Livre";
 import {ModifyLivrePage} from "../modify-livre/modify-livre";
+import {ShowLivrePage} from "../show-livre/show-livre"
 
 
 @Component({
@@ -14,6 +15,7 @@ export class HomePage {
 
     livres:any
     keyword:string
+    livre:any
 
     constructor(public navController:NavController,
                 public api:APIService
@@ -28,7 +30,7 @@ export class HomePage {
     }
 
     search(){
-        console.log(this.keyword)
+        //console.log(this.keyword)
         if(this.keyword === undefined || this.keyword === null || this.keyword == '' ){
             this.api.getLivres().subscribe(res =>{
                 this.livres = res
@@ -45,6 +47,15 @@ export class HomePage {
           {
               'livre' : livre
           }
+      )
+
+  }
+  showLivre(livre){
+
+      this.navController.push(ShowLivrePage,
+        {
+          'livre' : livre
+        }
       )
 
   }

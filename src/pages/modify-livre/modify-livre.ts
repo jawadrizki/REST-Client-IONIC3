@@ -39,7 +39,7 @@ export class ModifyLivrePage {
       'titre': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(100)])],
       'auteur': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(100)])],
       'date': [null, Validators.required],
-      'categorie': [null, Validators.required],
+      'categorie': [null],
       'id':[null]
 
     })

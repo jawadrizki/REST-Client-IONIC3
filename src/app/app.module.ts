@@ -11,6 +11,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AddLivrePage} from "../pages/add-livre/add-livre";
 import {ModifyLivrePage} from "../pages/modify-livre/modify-livre";
+import {ShowLivrePage} from "../pages/show-livre/show-livre";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {ModifyLivrePage} from "../pages/modify-livre/modify-livre";
     HomePage,
     AddLivrePage,
     ModifyLivrePage,
+    ShowLivrePage,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import {ModifyLivrePage} from "../pages/modify-livre/modify-livre";
     HomePage,
     AddLivrePage,
     ModifyLivrePage,
+    ShowLivrePage,
   ],
   providers: [
     StatusBar,
